@@ -1,4 +1,5 @@
-<project xmlns="https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://maven.apache.org/xsd/maven-4.0.0.xsd ">
     <groupId>co.inventorsoft.vakaliuk</groupId>
     <artifactId>authentication-vs-authorization</artifactId>
     <modelVersion>4.0.0</modelVersion>
@@ -32,7 +33,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.18</version>
             <scope>compile</scope>
         </dependency>
 
