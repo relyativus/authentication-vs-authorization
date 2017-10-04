@@ -5,6 +5,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>basicauth</module>
+        <module>digestauth</module>
+        <module>formloginauth</module>
+        <module>common</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
     <version>0.1.0</version>

@@ -7,19 +7,9 @@
         <groupId>co.inventorsoft.vakaliuk</groupId>
         <version>0.1.0</version>
     </parent>
-
-    <packaging>jar</packaging>
-
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>basic-auth</artifactId>
+    <artifactId>common</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>co.inventorsoft.vakaliuk</groupId>
-            <artifactId>common</artifactId>
-            <version>0.1.0</version>
-        </dependency>
-    </dependencies>
 
 </project>
