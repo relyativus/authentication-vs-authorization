@@ -7,9 +7,21 @@
         <groupId>co.inventorsoft.vakaliuk</groupId>
         <version>0.1.0</version>
     </parent>
-    <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>common</artifactId>
+    <artifactId>oauthclient</artifactId>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

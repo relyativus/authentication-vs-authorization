@@ -1,4 +1,4 @@
-package co.inventorsoft.vakaliuk.oauth.config;
+package co.inventorsoft.vakaliuk.oauth.server.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -24,6 +24,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/oauth/token").permitAll()
                     .mvcMatchers(HttpMethod.GET, "/protected/user").hasRole("USER")
-                    .antMatchers("/**").authenticated();
+                    .antMatchers("/").permitAll();
     }
 }

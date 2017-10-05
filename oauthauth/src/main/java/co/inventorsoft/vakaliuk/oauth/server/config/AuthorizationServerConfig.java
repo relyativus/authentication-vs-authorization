@@ -1,4 +1,4 @@
-package co.inventorsoft.vakaliuk.oauth.config;
+package co.inventorsoft.vakaliuk.oauth.server.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -27,10 +27,11 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("insecure").secret("test")
+                .withClient("untrusted").secret("test").redirectUris("http://localhost:8081/code-verify").scopes("read")
                 .authorizedGrantTypes("authorization_code")
                 .and()
-                .withClient("not_trusted_web").secret("test").authorizedGrantTypes("implicit")
+                .withClient("untrusted-web").secret("test").authorizedGrantTypes("implicit").scopes("read")
+                .redirectUris("http://localhost:8081/implicit-verify")
                 .and()
                 .withClient("webapp").secret("test").authorizedGrantTypes("client_credentials")
                 .and()
@@ -62,8 +63,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http
-                    .formLogin().disable()
-                    .httpBasic().disable();
+                    .formLogin().usernameParameter("username").passwordParameter("password").and()
+                    .httpBasic().disable()
+            .csrf().disable();
         }
 
         private UserDetailsService inMemoryUserDetails() {

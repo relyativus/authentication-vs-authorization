@@ -1,13 +1,13 @@
-package co.inventorsoft.vakaliuk.oauth;
+package co.inventorsoft.vakaliuk.oauth.server;
 
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OAuthStarter {
+public class OAuthServerStarter {
 
     public static void main(String[] args) {
-        SpringApplication.run(OAuthStarter.class, args);
+        SpringApplication.run(OAuthServerStarter.class, args);
     }
 }

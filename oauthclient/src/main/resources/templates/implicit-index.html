@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<form action="http://localhost:8080/oauth/authorize" method="post">
+    <input type="hidden" name="response_type" value="token"/>
+    <input type="hidden" name="client_id" value="untrusted-web"/>
+    <input type="hidden" name="redirect_uri" value="http://localhost:8081/implicit-verify"/>
+    <button>Try implicit flow!</button>
+</form>
+<footer>
+    UI designed by Anatolii Vakaliuk ©
+</footer>
+</body>
+</html>
