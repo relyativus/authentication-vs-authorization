@@ -23,7 +23,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .httpBasic().disable()
                 .authorizeRequests()
                     .antMatchers("/oauth/token").permitAll()
-                    .mvcMatchers(HttpMethod.GET, "/protected/user").hasRole("USER")
+                    .mvcMatchers(HttpMethod.GET, "/protected/user").access("#oauth2.hasScope('read')")
                     .antMatchers("/").permitAll();
     }
 }
